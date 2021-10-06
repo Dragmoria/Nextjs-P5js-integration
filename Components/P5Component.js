@@ -1,4 +1,5 @@
 import Sketch from 'react-p5';
+import styles from './P5Component.module.css';
 
 
 
@@ -15,8 +16,8 @@ function P5Component() {
     }
 
     return (
-        <div className="test" id="p5parentDiv">
-            <Sketch setup={setup} draw={draw} ></Sketch>
+        <div className={styles.p5ParentDiv} id="p5parentDiv">
+            { process.browser && <Sketch setup={setup} draw={draw} ></Sketch> }
         </div>
     )
 }
