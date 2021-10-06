@@ -1,4 +1,4 @@
 .p5ParentDiv {
     width: 50%;
-    height: 100px;
+    min-height: 50%;
 }

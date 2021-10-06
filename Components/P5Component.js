@@ -9,8 +9,9 @@ function P5Component() {
     const setup = (p5, parentRef) => {
         parentOfCanvas = parentRef.parentElement;
 
-        const width = Number(parentOfCanvas.offsetWidth);
-        const height = Number(parentOfCanvas.offsetHeight);
+        const clientRect = parentOfCanvas.getBoundingClientRect();
+        const width = clientRect.width;
+        const height = clientRect.height - 4;
 
         p5.createCanvas(width, height).parent(parentRef);
         p5.background(0);
@@ -21,8 +22,10 @@ function P5Component() {
     }
 
     const windowResized = (p5) => {
-        const width = Number(parentOfCanvas.offsetWidth);
-        const height = Number(parentOfCanvas.offsetHeight);
+        const clientRect = parentOfCanvas.getBoundingClientRect();
+        const width = clientRect.width;
+        const height = clientRect.height - 4;
+        console.log(height)
         p5.resizeCanvas(width, height);
         p5.background(0);
     }
