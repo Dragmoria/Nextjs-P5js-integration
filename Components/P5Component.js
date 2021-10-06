@@ -24,7 +24,7 @@ function P5Component() {
         const width = Number(parentOfCanvas.offsetWidth);
         const height = Number(parentOfCanvas.offsetHeight);
         p5.resizeCanvas(width, height);
-        p5.background(200, 150, 80);
+        p5.background(0);
     }
 
     return (
