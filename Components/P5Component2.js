@@ -20,7 +20,7 @@ function P5Component() {
 
     }
 
-    const windowResized = (p5, parentRef) => {
+    const windowResized = (p5) => {
         const width = Number(parentOfCanvas.offsetWidth);
         const height = Number(parentOfCanvas.offsetHeight);
         p5.resizeCanvas(width, height);
