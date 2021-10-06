@@ -1,6 +1,4 @@
 .p5ParentDiv {
     width: 50%;
-    min-height: 80%;
-    max-height: 80%;
-    background-color: rgba(100, 100, 100, 10);
+    height: 100px;
 }

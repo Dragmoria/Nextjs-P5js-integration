@@ -7,7 +7,11 @@ const Sketch = dynamic( () => import('react-p5'), { ssr: false } )
 
 
 function P5Component() {
+    let parentOfCanvas;
+    
     const setup = (p5, parentRef) => {
+        parentOfCanvas = parentRef;
+
         p5.createCanvas(200, 200).parent(parentRef);
         p5.background(0);
     }
@@ -16,9 +20,13 @@ function P5Component() {
 
     }
 
+    const windowResized = (p5, parentRef) => {
+        console.log(parentOfCanvas)
+    }
+
     return (
         <div className={styles.p5ParentDiv} id="p5parentDiv">
-            { process.browser && <Sketch setup={setup} draw={draw} ></Sketch> }
+            { process.browser && <Sketch setup={setup} draw={draw} windowResized={windowResized} ></Sketch> }
         </div>
     )
 }
