@@ -1,7 +1,8 @@
-import Sketch from 'react-p5';
+import dynamic from 'next/dynamic';
+//import Sketch from 'react-p5';
 import styles from './P5Component.module.css';
 
-
+const Sketch = dynamic( () => import('react-p5'), { ssr: false } )
 
 
 
